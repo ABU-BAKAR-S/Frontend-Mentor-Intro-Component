@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Intro component with sign up form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- tailwind cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- container -->
+    <div
+      class="min-h-screen bg-[#FF7A7A] bg-[url('images/bg-intro-mobile.png')] bg-cover bg-center py-10 px-5 text-white font-['Poppins'] md:flex md:items-center lg:px-16 xl:px-[100px]"
+    >
+      <!-- text container -->
+      <div class="py-10 text-center md:basis-1/2 md:text-left md:pr-6 md:pl-3">
+        <h1 class="text-3xl font-[700] lg:text-4xl">
+          Learn to code by <br />
+          watching others
+        </h1>
+        <p class="py-6 text-sm font-[500] leading-6">
+          See how experienced developers solve problems in real-time. Watching
+          scripted tutorials is great, but understanding how developers think is
+          invaluable.
+        </p>
+      </div>
+
+      <!-- form container -->
+
+      <div class="w-full md:basis-1/2">
+        <div
+          class="w-full bg-[#6055A5] text-center py-5 px-5 mb-5 text-base font-[700] rounded-lg shadow-[0_8px_rgba(0,0,0,0.2)] lg:w-[450px]"
+        >
+          Try it free 7 days
+          <span class="font-[400] text-gray-100">then $20/mo. thereafter</span>
+        </div>
+        <div
+          class="w-full mt-5 px-3 py-3 bg-white text-black rounded-lg lg:w-[450px]"
+        >
+          <form action="" class="transition-all">
+            <div class="relative text-right">
+              <input
+                class="w-full border rounded border-gray-300 py-4 pl-4 my-2 placeholder:text-sm placeholder:text-[#3E3C49] placeholder:font-[500] focus:"
+                type="text"
+                name="fname"
+                id="fname"
+                placeholder="First Name"
+                onkeyup="validFirstName()"
+              />
+              <img
+                id="fnameErrorIcon"
+                src="images/icon-error.svg"
+                alt="icon-error"
+                class="absolute top-[43%] right-3 transform -translate-y-1/2 hidden"
+              />
+              <small id="fnameError" class="text-xs text-[#FF7A7A] hidden"
+                >First name can't be empty</small
+              >
+            </div>
+            <div class="relative text-right">
+              <input
+                class="w-full border rounded border-gray-300 py-4 pl-4 my-2 placeholder:text-sm placeholder:text-[#3E3C49] placeholder:font-[500]"
+                type="text"
+                name="lname"
+                id="lname"
+                placeholder="Last Name"
+                onkeyup="validLastName()"
+              />
+              <img
+                id="lnameErrorIcon"
+                src="images/icon-error.svg"
+                alt="icon-error"
+                class="absolute top-[43%] right-3 transform -translate-y-1/2 hidden"
+              />
+              <small id="lnameError" class="text-xs text-[#FF7A7A] hidden"
+                >Last name can't be empty</small
+              >
+            </div>
+            <div class="relative text-right">
+              <input
+                class="w-full border rounded border-gray-300 py-4 pl-4 my-2 placeholder:text-sm placeholder:text-[#3E3C49] placeholder:font-[500]"
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email Address"
+                autocomplete="username"
+                onkeyup="validEmail()"
+              />
+              <img
+                id="emailErrorIcon"
+                src="images/icon-error.svg"
+                alt="icon-error"
+                class="absolute top-[43%] right-3 transform -translate-y-1/2 hidden"
+              />
+              <small id="emailError" class="text-xs text-[#FF7A7A] hidden"
+                >Looks like this is not an email</small
+              >
+            </div>
+            <div class="relative text-right">
+              <input
+                class="w-full border rounded border-gray-300 py-4 pl-4 my-2 placeholder:text-sm placeholder:text-[#3E3C49] placeholder:font-[500]"
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Password"
+                autocomplete="current-password"
+                onkeyup="validPassword()"
+              />
+              <img
+                id="passwordErrorIcon"
+                src="images/icon-error.svg"
+                alt="icon-error"
+                class="absolute top-[43%] right-3 transform -translate-y-1/2 hidden"
+              />
+              <small id="passwordError" class="text-xs text-[#FF7A7A] hidden"
+                >Password can't be empty</small
+              >
+            </div>
+
+            <input
+              class="w-full border rounded border-gray-300 py-4 pl-4 my-2 text-center bg-[#38CC8C] text-white font-[600] uppercase tracking-wider shadow cursor-pointer hover:bg-green-300"
+              type="submit"
+              id="submitBtn"
+              value="Claim your free trial"
+              onclick="submitForm()"
+            />
+          </form>
+          <div class="text-center">
+            <small class="text-[10px] text-[#B9B6D3] px-7">
+              By clicking the button, you are agreeing to our
+              <span class="text-[#FF7A7A] font-[700]">Terms and Services</span>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="style.js"></script>
+  </body>
+</html>
